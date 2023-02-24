@@ -1,0 +1,3 @@
+-keep class ai.meson.** {*;}
+-keep interface ai.meson.** {*;}
+-keepclassmembers class ai.meson.** { public *; }

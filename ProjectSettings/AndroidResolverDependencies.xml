@@ -1,0 +1,51 @@
+<dependencies>
+  <packages>
+    <package>ai.meson.sdk.mediation:adcolony:4.8.0.0-beta3</package>
+    <package>ai.meson.sdk.mediation:admob:21.0.0.0-beta4</package>
+    <package>ai.meson.sdk.mediation:applovin:11.4.3.0-beta3</package>
+    <package>ai.meson.sdk.mediation:gam:21.0.0.0-beta4</package>
+    <package>ai.meson.sdk.mediation:inmobi:10.0.7.0-beta3</package>
+    <package>ai.meson.sdk.mediation:mintegral:16.1.41.0-beta5</package>
+    <package>ai.meson.sdk.mediation:unity:4.2.1.0-beta4</package>
+    <package>ai.meson.sdk.mediation:vungle:6.12.0.0-beta1</package>
+    <package>ai.meson.sdk:meson:1.0.0-beta22</package>
+    <package>androidx.browser:browser:1.3.0</package>
+    <package>androidx.core:core-ktx:1.3.2</package>
+    <package>androidx.recyclerview:recyclerview:1.1.0</package>
+    <package>com.adcolony:sdk:4.8.0</package>
+    <package>com.android.support:multidex:1.0.3</package>
+    <package>com.applovin:applovin-sdk:11.4.3</package>
+    <package>com.google.android.gms:play-services-ads:21.0.0</package>
+    <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
+    <package>com.google.android.gms:play-services-location:17.1.0</package>
+    <package>com.google.code.gson:gson:2.9.0</package>
+    <package>com.inmobi.monetization:inmobi-ads:10.0.7</package>
+    <package>com.mbridge.msdk.oversea:interstitial:16.1.41</package>
+    <package>com.mbridge.msdk.oversea:interstitialvideo:16.1.41</package>
+    <package>com.mbridge.msdk.oversea:mbbanner:16.1.41</package>
+    <package>com.mbridge.msdk.oversea:mbbid:16.1.41</package>
+    <package>com.mbridge.msdk.oversea:reward:16.1.41</package>
+    <package>com.squareup.picasso:picasso:2.71828</package>
+    <package>com.unity3d.ads:unity-ads:4.2.1</package>
+    <package>com.vungle:publisher-sdk-android:6.12.0</package>
+    <package>org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10</package>
+    <package>org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9</package>
+    <package>org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9</package>
+  </packages>
+  <files />
+  <settings>
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="bundleId" value="com.terabhai.testingmeson" />
+    <setting name="explodeAars" value="True" />
+    <setting name="gradleBuildEnabled" value="True" />
+    <setting name="gradlePropertiesTemplateEnabled" value="True" />
+    <setting name="gradleTemplateEnabled" value="True" />
+    <setting name="installAndroidPackages" value="True" />
+    <setting name="localMavenRepoDir" value="Assets/GeneratedLocalRepo" />
+    <setting name="packageDir" value="Assets/Plugins/Android" />
+    <setting name="patchAndroidManifest" value="True" />
+    <setting name="patchMainTemplateGradle" value="True" />
+    <setting name="projectExportEnabled" value="False" />
+    <setting name="useJetifier" value="False" />
+  </settings>
+</dependencies>
