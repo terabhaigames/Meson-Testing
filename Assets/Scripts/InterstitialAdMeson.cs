@@ -4,68 +4,70 @@ using UnityEngine;
 
 public class InterstitialAdMeson : MonoBehaviour
 {
-    string[] interstitialAdUnits = {"b93edb8f-6d5f-4891-8224-c7b05ca6c515","6d38a20e-8460-4c0c-abcd-aad7be414d8d"};
-    string interstitialAdUnitId;
+string[] interstitialAdUnits = {"b93edb8f-6d5f-4891-8224-c7b05ca6c515","6d38a20e-8460-4c0c-abcd-aad7be414d8d"};
+string interstitialAdUnitId;
 
-    void Awake()
-    {
+void Awake()
+{
 
 #if UNITY_IOS
     interstitialAdUnitId = "b93edb8f-6d5f-4891-8224-c7b05ca6c515";
 #elif UNITY_ANDROID
     interstitialAdUnitId = "6d38a20e-8460-4c0c-abcd-aad7be414d8d";
 #endif
+}
+
+void Start()
+{
+    MesonManager.SdkInitializedEvent += OnSdkInitializedEvent;
+    Meson.LoadInterstitialPluginsForAdUnits(interstitialAdUnits);
+
+    InvokeRepeating("LoadInterstitial", 120f,120f);
+    InvokeRepeating("ShowInterstitial", 123f, 123f);
+}
+
+private void OnSdkInitializedEvent(string adUnitId)
+{
+    // The SDK is initialized here. Ready to make ad requests.
     
-    }
-    void Start()
-    {
-        MesonManager.SdkInitializedEvent += OnSdkInitializedEvent;
-        Meson.LoadInterstitialPluginsForAdUnits(interstitialAdUnits);        
-    }
-    private void OnSdkInitializedEvent(string adUnitId)
-    {
-        // The SDK is initialized here. Ready to make ad requests.  
-        //InvokeRepeating("LoadInterstitial", 45f,45f);
-        //InvokeRepeating("ShowInterstitial", 47f, 47f);
-        InitializeInterstitialAds();
-    }
+    InitializeInterstitialAds();
+}
 
-   public void LoadInterstitial()
-   {
-        Meson.RequestInterstitialAd(interstitialAdUnitId);
-   }
+public void LoadInterstitial()
+{
+    Meson.RequestInterstitialAd(interstitialAdUnitId);
+}
 
-   public void ShowInterstitial()
-   {
-        Meson.ShowInterstitialAd(interstitialAdUnitId);
-   }
-   public void InitializeInterstitialAds()
-    {
-        MesonManager.InterstitialAdLoadedEvent += InterstitialAdLoaded;
-        MesonManager.InterstitialAdLoadFailedEvent += InterstitialAdLoadFailed;
-        MesonManager.InterstitialAdDismissedEvent += InterstitialAdDismissed;
-        MesonManager.InterstitialAdClickedEvent += InterstitialAdClicked;
-        MesonManager.InterstitialAdDisplayFailedEvent += InterstitialAdDisplayFailed;
-        MesonManager.InterstitialAdUserLeftApplicationEvent += InterstitialAdUserLeftApplication;
-        MesonManager.InterstitialAdDisplayedEvent += InterstitialAdDisplayed;
-        MesonManager.InterstitialAdImpressionTrackedEvent += InterstitialAdImpressionTracked;    
-    }
+public void ShowInterstitial()
+{
+    Meson.ShowInterstitialAd(interstitialAdUnitId);
+}
 
-    private void InterstitialAdLoaded(string adUnitId){} 
+public void InitializeInterstitialAds()
+{
+    MesonManager.InterstitialAdLoadedEvent += InterstitialAdLoaded;
+    MesonManager.InterstitialAdLoadFailedEvent += InterstitialAdLoadFailed;
+    MesonManager.InterstitialAdDismissedEvent += InterstitialAdDismissed;
+    MesonManager.InterstitialAdClickedEvent += InterstitialAdClicked;
+    MesonManager.InterstitialAdDisplayFailedEvent += InterstitialAdDisplayFailed;
+    MesonManager.InterstitialAdUserLeftApplicationEvent += InterstitialAdUserLeftApplication;
+    MesonManager.InterstitialAdDisplayedEvent += InterstitialAdDisplayed;
+    MesonManager.InterstitialAdImpressionTrackedEvent += InterstitialAdImpressionTracked;
+}
 
-    private void InterstitialAdLoadFailed(string adUnitId, string message){}
+private void InterstitialAdLoaded(string adUnitId){}
 
-    private void InterstitialAdDismissed(string adUnitId){}
+private void InterstitialAdLoadFailed(string adUnitId, string message){}
 
-    private void InterstitialAdClicked(string adunitId, Dictionary<string, object> networkData){}
+private void InterstitialAdDismissed(string adUnitId){}
 
-    private void InterstitialAdDisplayFailed(string adUnitId){}
+private void InterstitialAdClicked(string adunitId, Dictionary<string, object> networkData){}
 
-    private void InterstitialAdUserLeftApplication(string adUnitId){}
+private void InterstitialAdDisplayFailed(string adUnitId){}
 
-    private void InterstitialAdDisplayed(string adUnitId){}
+private void InterstitialAdUserLeftApplication(string adUnitId){}
 
-    private void InterstitialAdImpressionTracked(string adUnitId, MesonAdData adData){}
-    
-    
+private void InterstitialAdDisplayed(string adUnitId){}
+
+private void InterstitialAdImpressionTracked(string adUnitId, MesonAdData adData){}
 }
